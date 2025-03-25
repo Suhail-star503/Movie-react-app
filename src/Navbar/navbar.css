@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: chocolate;
+    height: 70px;
+    color: black;
+
+}
+ 
+
