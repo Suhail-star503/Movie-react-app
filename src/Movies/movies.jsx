@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './movies.css';
 import MovieCard from './Moviecard';
 
+
 let API_url = 'http://www.omdbapi.com/?apikey=c4c99b36&s=war';
 
-const Movies = () => {
+const Movies = ({cartitem,setCartitem,favorititem,setFavoriteitem}) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
+    
 
     const getMovies = async () => {
         setLoading(true);
@@ -46,7 +48,7 @@ const Movies = () => {
                         ) : (
                             data.length === 0 ? <h1 style={{ color: "white", textAlign: "center" }}>No movies found</h1> :
                                 data.map((movie) =>{
-                                   return <MovieCard key={movie.imdbID} movie={movie} />
+                                   return <MovieCard key={movie.imdbID} movie={movie} cartitem={cartitem} setCartitem={setCartitem} favorititem={favorititem} setFavoriteitem={setFavoriteitem}/>
                                 }) 
                                     
                                 

@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
 
 
+
 import { toast } from 'react-toastify';
 
-const MovieCard = ({ movie }) => {
+
+const MovieCard = ({ movie ,cartitem,setCartitem,favorititem,setFavoriteitem}) => {
     const [favorite, setFavorite] = useState(false);
     const [cart, setCart] = useState(false);
+    
 
     
     const handleFavorite = () => {
         setFavorite(!favorite);
+        
+        setFavoriteitem((prev) => (favorite ? prev - 1 : prev + 1));
         const vlaue = favorite ? "Removed from favorite" : "Added to favorite";
         toast.success(vlaue, {
             position: "top-center",
             theme: "dark",
         });
+        
+
 
     };
     const handleCart = () => {
         setCart(!cart);
+       
+        setCartitem((prev) => (cart ? prev - 1 : prev + 1));
         const vlaue = cart ? "Removed from cart" : "Added to cart";
         toast.success(vlaue, {
             position: "top-center",
             theme: "dark",
         });
+       
+        
+      
     };
 
 
@@ -104,5 +116,6 @@ const MovieCard = ({ movie }) => {
 };
 
 export default MovieCard;
+
 
 

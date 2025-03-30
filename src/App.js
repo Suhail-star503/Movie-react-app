@@ -1,13 +1,18 @@
 import React from "react";
 import Navbar from "./Navbar/navbar";
 import Movies from "./Movies/movies";
-// import Student from "./student";
+import Footer from "./Footer";
+import { useState } from "react";
 const App = () => {
+    const [cartitem, setCartitem] = useState(0);
+    const [favoriteitem, setFavoriteitem] = useState(0);
+
     return (
         <div>
-            <Navbar />
+            <Navbar cart={cartitem} favorititem={favoriteitem}/>
             
-            <Movies />
+            <Movies cartitem={cartitem} setCartitem={setCartitem} favorititem={favoriteitem} setFavoriteitem={setFavoriteitem}/>
+            <Footer />
             
            
             

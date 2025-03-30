@@ -4,10 +4,11 @@ body{
 .navbar {
     width: 100%;
     display: flex;
-    justify-content: center;
-    background-color: chocolate;
+    justify-content: space-between;
+    background-color:black;
     height: 70px;
     color: black;
+    box-shadow: inset 0px -5px 10px 0px gray;
 
 }
  
